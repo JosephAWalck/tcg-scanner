@@ -1,0 +1,6 @@
+# TS build
+dist/
+# Node.js
+node_modules/
+# Environment variables
+.env*

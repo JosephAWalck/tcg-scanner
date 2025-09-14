@@ -40,7 +40,7 @@ async function fetchCardData(cardTitle: string): Promise<ApiCardResponse[]> {
 export const handler: SQSHandler = async (event: SQSEvent) => {
     for (const record of event.Records) {
         try {
-            const { cardName } = JSON.parse(JSON.stringify(record.body))
+            const { cardName } = JSON.parse(record.body)
             console.log('Recieved Card Name:', cardName);
 
             const cards: ApiCardResponse[] = await fetchCardData(cardName)
